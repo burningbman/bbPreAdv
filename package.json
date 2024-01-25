@@ -1,0 +1,29 @@
+{
+  "name": "bbPreAdv",
+  "version": "1.0.0",
+  "description": "A pre-adventure script that can be used in KoLmafia to aid in Kingdom of Loathing ascensions.",
+  "main": "index.js",
+  "repository": "https://github.com/burningbman/bbPreAdv.git",
+  "author": "Blake Badders",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "node --no-warnings --loader ts-node/esm/transpile-only ./build.mjs"
+  },
+  "dependencies": {
+    "kolmafia": "^5.27815.0",
+    "libram": "^0.8.22"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.23.8",
+    "@babel/preset-typescript": "^7.23.3",
+    "@types/node": "^20.11.6",
+    "esbuild": "^0.19.12",
+    "esbuild-plugin-babel": "^0.2.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-libram": "^0.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
