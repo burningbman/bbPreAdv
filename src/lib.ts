@@ -45,8 +45,7 @@ export interface Zone {
     dropChance?: number,
     foodDrop?: boolean,
     boozeDrop?: boolean,
-    com?: boolean,
-    rwbTarget?: Monster
+    com?: boolean
 }
 
 export const FRIAR_ZONE_DATA: Zone = {
@@ -86,8 +85,7 @@ export const ZONE_DATA = new Map<Location, Zone>([
     [$location`The Black Forest`, {
         forceEquip: [$item`blackberry galoshes`],
         com: true,
-        fam: have($item`reassembled blackbird`) ? (have(toItem('LED Candle')) ? undefined : $familiar`Jill-of-All-Trades`) : $familiar`Reassembled Blackbird`,
-        rwbTarget: $monster`black friar`
+        fam: have($item`reassembled blackbird`) ? (have(toItem('LED Candle')) ? undefined : $familiar`Jill-of-All-Trades`) : $familiar`Reassembled Blackbird`
     }],
     [$location`The Spooky Forest`, {
         nc: $location`The Spooky Forest`.turnsSpent > 5
@@ -189,8 +187,7 @@ export const ZONE_DATA = new Map<Location, Zone>([
         targetMonster: $monster`pygmy witch accountant`
     }],
     [$location`The Hidden Hospital`, {
-        targetMonster: $monster`pygmy witch surgeon`,
-        rwbTarget: $monster`pygmy witch surgeon`
+        targetMonster: $monster`pygmy witch surgeon`
     }],
     [$location`The Haunted Bedroom`, {
         targetMonster: $monster`elegant animated nightstand`
@@ -244,14 +241,12 @@ export const ZONE_DATA = new Map<Location, Zone>([
     [$location`The Haunted Laundry Room`, {
         dropChance: 15,
         foodDrop: true,
-        targetMonster: $monster`cabinet of Dr. Limpieza`,
-        rwbTarget: $monster`cabinet of Dr. Limpieza`
+        targetMonster: $monster`cabinet of Dr. Limpieza`
     }],
     [$location`The Haunted Wine Cellar`, {
         dropChance: 15,
         boozeDrop: true,
-        targetMonster: $monster`possessed wine rack`,
-        rwbTarget: $monster`possessed wine rack`
+        targetMonster: $monster`possessed wine rack`
     }],
     [$location`The Haunted Boiler Room`, {
         maximizer: [ML],
@@ -303,8 +298,7 @@ export const ZONE_DATA = new Map<Location, Zone>([
     }],
     [$location`The Middle Chamber`, {
         dropChance: 20,
-        targetMonster: $monster`tomb rat`,
-        rwbTarget: $monster`tomb rat`
+        targetMonster: $monster`tomb rat`
     }],
     [$location`Cobb's Knob Harem`, {
         targetMonster: $monster`Knob Goblin Harem Girl`

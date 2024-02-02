@@ -1,13 +1,11 @@
-import { Location, Monster } from "kolmafia";
-import { ASC_IOTM } from "../../lib";
-import { $effect, $item, $location, $monsters, get, have } from "libram";
+import { Location, getLocationMonsters } from "kolmafia";
+import { ASC_IOTM, ZONE_DATA } from "../../lib";
+import { $effect, $item, $location, get, have } from "libram";
 
-const monstersToBanish = new Map<Location, Monster[]>([
-    [$location`The Defiled Niche`, $monsters`basic lihc, senile lihc, slick lihc`]
-]);
-
-const needPaw = (loc: Location, monsters: Monster[]): boolean => {
+const needPaw = (loc: Location): boolean => {
+    const data = ZONE_DATA.get(loc);
     const banishedMonsters = get('banishedMonsters');
+    const monsters = Object.keys(getLocationMonsters(loc)).filter((name) => name !== data?.targetMonster?.name);
     const isBanished = Boolean(monsters.find((monster) => banishedMonsters.includes(`cursed monkey paw:${monster}`)));
     if (loc === $location`The Hidden Temple` && have($effect`Stone-Faced`)) return false;
     return isBanished;
@@ -16,8 +14,8 @@ const needPaw = (loc: Location, monsters: Monster[]): boolean => {
 export default {
     equip: (loc: Location) => {
         if (get('_monkeyPawWishesUsed') === 0) {
-            const monsters = monstersToBanish.get(loc);
-            if (monsters && needPaw(loc, monsters)) return [$item`cursed monkey's paw`];
+            const data = ZONE_DATA.get(loc);
+            if (data && data.targetMonster && needPaw(loc)) return [$item`cursed monkey's paw`];
         }
         return [];
     }

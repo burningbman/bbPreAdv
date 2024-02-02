@@ -1,10 +1,15 @@
-import { $location, AutumnAton } from "libram";
+import { $item, AutumnAton, get } from "libram";
 import { ASC_IOTM } from "../../lib";
-import { Location, myLevel } from "kolmafia";
+import { itemAmount, myLevel } from "kolmafia";
 
 export default {
-    errors: (loc: Location) => {
-        return loc === $location`The Hidden Temple` && !AutumnAton.currentUpgrades().includes('leftarm1') ? ['Wait for fallbot to explore the temple.'] : [];
-    },
-    warnings: () => AutumnAton.available() && myLevel() >= 4 ? ['Fallbot ready for dispatch'] : []
+    warnings: () => {
+        const warnings = [];
+        if (AutumnAton.available() && myLevel() >= 4 &&
+            (itemAmount($item`rusty hedge trimmers`) < 4 && get('twinPeakProgress') !== 15) &&
+            get('cyrptNookEvilness') > 13) {
+            warnings.push('Fallbot ready for dispatch');
+        }
+        return warnings;
+    }
 } as ASC_IOTM;

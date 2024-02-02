@@ -3,6 +3,8 @@ import { get, have, $effect, $familiar, $location, $monster, $phylum } from "lib
 import { ASC_IOTM, ZONE_DATA } from "../../lib";
 
 const rwbTargetByLocation = new Map<Location, Monster>([
+    [$location`The Defiled Niche`, $monster`dirty old lihc`],
+    [$location`The Haunted Library`, $monster`writing desk`],
     [$location`The Haunted Laundry Room`, $monster`cabinet of Dr. Limpieza`],
     [$location`The Hidden Hospital`, $monster`pygmy witch surgeon`],
     [$location`The Haunted Wine Cellar`, $monster`possessed wine rack`],
@@ -13,7 +15,8 @@ const phyla = new Map<Location, Phylum>([
     [$location`The Outskirts of Cobb's Knob`, $phylum`Goblin`],
     [$location`The Arid, Extra-Dry Desert`, $phylum`Bug`],
     [$location`Twin Peak`, $phylum`Dude`],
-    [$location`Inside the Palindome`, $phylum`Beast`]
+    [$location`Inside the Palindome`, $phylum`Beast`],
+    [$location`The Haunted Kitchen`, $phylum`Undead`]
 ]);
 
 export default {
@@ -43,6 +46,8 @@ export default {
 
         if (target && get('rwbMonster') !== target && !have($effect`Everything Looks Red, White and Blue`) ||
             loc === $location`The Hidden Temple` && get('_citizenZone') !== 'The Hidden Temple' && !have($effect`Stone-Faced`) ||
+            loc === $location`Lair of the Ninja Snowmen` && get('_citizenZone') !== 'Lair of the Ninja Snowmen' ||
+            loc === $location`The Icy Peak` && get('_citizenZone') !== 'The Icy Peak' ||
             phylum && !get('banishedPhyla').includes(phylum.toString())) {
             return $familiar`Patriotic Eagle`;
         }
