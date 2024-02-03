@@ -11,7 +11,7 @@ export default {
     equip: (loc: Location) => {
         if (loc === $location`The Daily Dungeon` && !get('candyCaneSwordDailyDungeon') ||
             loc === $location`The Black Forest` && $location`The Black Forest`.turnsSpent % 5 === 4 && !get('candyCaneSwordBlackForest') ||
-            loc === $location`The Shore\, Inc. Travel Agency` && !get('candyCaneSwordShore') ||
+            loc === $location`The Shore, Inc. Travel Agency` && !get('candyCaneSwordShore') ||
             loc === $location`Hippy Camp` && !(get('candyCaneSwordWarHippyBait') || get('candyCaneSwordWarHippyLine')) ||
             loc === $location`The Penultimate Fantasy Airship` && !have($item`metallic A`) ||
             loc === $location`A Mob of Zeppelin Protesters` ||
