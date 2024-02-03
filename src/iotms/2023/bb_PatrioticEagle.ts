@@ -4,7 +4,6 @@ import { ASC_IOTM, ZONE_DATA } from "../../lib";
 
 const rwbTargetByLocation = new Map<Location, Monster>([
     [$location`The Defiled Niche`, $monster`dirty old lihc`],
-    [$location`The Haunted Library`, $monster`writing desk`],
     [$location`The Haunted Laundry Room`, $monster`cabinet of Dr. Limpieza`],
     [$location`The Hidden Hospital`, $monster`pygmy witch surgeon`],
     [$location`The Haunted Wine Cellar`, $monster`possessed wine rack`],
@@ -15,8 +14,7 @@ const phyla = new Map<Location, Phylum>([
     [$location`The Outskirts of Cobb's Knob`, $phylum`Goblin`],
     [$location`The Arid, Extra-Dry Desert`, $phylum`Bug`],
     [$location`Twin Peak`, $phylum`Dude`],
-    [$location`Inside the Palindome`, $phylum`Beast`],
-    [$location`The Haunted Kitchen`, $phylum`Undead`]
+    [$location`Inside the Palindome`, $phylum`Beast`]
 ]);
 
 export default {

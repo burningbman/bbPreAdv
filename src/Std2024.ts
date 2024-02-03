@@ -21,9 +21,10 @@ import bb_CursedMagnifyingGlass from "./iotms/2022/bb_CursedMagnifyingGlass";
 import bb_DesignerSweatpants from "./iotms/2022/bb_DesignerSweatpants";
 import bb_RockGardenGuide from "./iotms/2023/bb_RockGardenGuide";
 import bb_SpringShoes from "./iotms/2024/bb_SpringShoes";
+import bb_AugustScepter from "./iotms/2023/bb_AugustScepter";
 
 const iotm2022 = [bb_AutumnAton, bb_CookBookBat, bb_CosmicBowlingBall, bb_CursedMagnifyingGlass, bb_DesignerSweatpants, bb_GreyGoose, bb_JuneCleaver, bb_Mayday, bb_ModelTrainSet, bb_TinyStillsuit];
-const iotm2023 = [bb_2002Catalog, bb_BookOfFacts, bb_CandyCane, bb_ClosedCircuitPhoneSystem, bb_CursedMonkeyPaw, bb_JillOfAllTrades, bb_PatrioticEagle, bb_RockGardenGuide, bb_SITCourseCertificate];
+const iotm2023 = [bb_2002Catalog, bb_AugustScepter, bb_BookOfFacts, bb_CandyCane, bb_ClosedCircuitPhoneSystem, bb_CursedMonkeyPaw, bb_JillOfAllTrades, bb_PatrioticEagle, bb_RockGardenGuide, bb_SITCourseCertificate];
 const iotm2024 = [bb_SpringShoes];
 
 const iotms = [...iotm2022, ...iotm2023, ...iotm2024];
