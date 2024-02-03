@@ -1,7 +1,6 @@
-import { $effect, $item, $location, have } from "libram";
+import { $effect, $item, $location, get, have } from "libram";
 import { ASC_IOTM } from "../../lib";
 import { Location, haveEquipped } from "kolmafia";
-import { get } from "http";
 
 export default {
     warnings: () => {
