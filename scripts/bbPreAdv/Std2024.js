@@ -318,7 +318,7 @@ var PropertiesManager = /* @__PURE__ */ function() {
   }
   _createClass(PropertiesManager2, [{
     key: "storedValues",
-    get: function get3() {
+    get: function get2() {
       return this.properties;
     }
     /**
@@ -1222,7 +1222,6 @@ var bb_2002Catalog_default = {
 
 // src/iotms/2023/bb_CandyCane.ts
 var import_kolmafia12 = require("kolmafia");
-var import_http = require("http");
 var _templateObject47;
 var _templateObject215;
 var _templateObject313;
@@ -1249,7 +1248,7 @@ var bb_CandyCane_default = {
     return warnings;
   },
   equip: function(loc) {
-    if (loc === $location(_templateObject313 || (_templateObject313 = _taggedTemplateLiteral9(["The Daily Dungeon"]))) && !(0, import_http.get)("candyCaneSwordDailyDungeon") || loc === $location(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral9(["The Black Forest"]))) && $location(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral9(["The Black Forest"]))).turnsSpent % 5 === 4 && !(0, import_http.get)("candyCaneSwordBlackForest") || loc === $location(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral9(["The Shore, Inc. Travel Agency"], ["The Shore\\, Inc. Travel Agency"]))) && !(0, import_http.get)("candyCaneSwordShore") || loc === $location(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral9(["Hippy Camp"]))) && !((0, import_http.get)("candyCaneSwordWarHippyBait") || (0, import_http.get)("candyCaneSwordWarHippyLine")) || loc === $location(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral9(["The Penultimate Fantasy Airship"]))) && !have($item(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral9(["metallic A"])))) || loc === $location(_templateObject102 || (_templateObject102 = _taggedTemplateLiteral9(["A Mob of Zeppelin Protesters"]))) || loc === $location(_templateObject112 || (_templateObject112 = _taggedTemplateLiteral9(["The Hidden Bowling Alley"]))) && have($item(_templateObject122 || (_templateObject122 = _taggedTemplateLiteral9(["bowling ball"])))) && !(0, import_http.get)("candyCaneSwordBowlingAlley")) {
+    if (loc === $location(_templateObject313 || (_templateObject313 = _taggedTemplateLiteral9(["The Daily Dungeon"]))) && !get("candyCaneSwordDailyDungeon") || loc === $location(_templateObject48 || (_templateObject48 = _taggedTemplateLiteral9(["The Black Forest"]))) && $location(_templateObject55 || (_templateObject55 = _taggedTemplateLiteral9(["The Black Forest"]))).turnsSpent % 5 === 4 && !get("candyCaneSwordBlackForest") || loc === $location(_templateObject65 || (_templateObject65 = _taggedTemplateLiteral9(["The Shore, Inc. Travel Agency"], ["The Shore\\, Inc. Travel Agency"]))) && !get("candyCaneSwordShore") || loc === $location(_templateObject74 || (_templateObject74 = _taggedTemplateLiteral9(["Hippy Camp"]))) && !(get("candyCaneSwordWarHippyBait") || get("candyCaneSwordWarHippyLine")) || loc === $location(_templateObject84 || (_templateObject84 = _taggedTemplateLiteral9(["The Penultimate Fantasy Airship"]))) && !have($item(_templateObject94 || (_templateObject94 = _taggedTemplateLiteral9(["metallic A"])))) || loc === $location(_templateObject102 || (_templateObject102 = _taggedTemplateLiteral9(["A Mob of Zeppelin Protesters"]))) || loc === $location(_templateObject112 || (_templateObject112 = _taggedTemplateLiteral9(["The Hidden Bowling Alley"]))) && have($item(_templateObject122 || (_templateObject122 = _taggedTemplateLiteral9(["bowling ball"])))) && !get("candyCaneSwordBowlingAlley")) {
       return [$item(_templateObject132 || (_templateObject132 = _taggedTemplateLiteral9(["candy cane sword cane"])))];
     }
     return void 0;
