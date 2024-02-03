@@ -1155,7 +1155,7 @@ var bb_Mayday_default = {
   },
   execute: function() {
     have($item(_templateObject64 || (_templateObject64 = _taggedTemplateLiteral6(["spare battery"])))) && (0, import_kolmafia8.use)($item(_templateObject73 || (_templateObject73 = _taggedTemplateLiteral6(["spare battery"]))));
-    have($item(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral6(["MayDay\u2122 supply package"])))) && (0, import_kolmafia8.daycount)() > 1 && (0, import_kolmafia8.use)($item(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral6(["MayDay\u2122 supply package"]))));
+    have($item(_templateObject83 || (_templateObject83 = _taggedTemplateLiteral6(["MayDay\u2122 supply package"])))) && (0, import_kolmafia8.myDaycount)() > 1 && (0, import_kolmafia8.use)($item(_templateObject93 || (_templateObject93 = _taggedTemplateLiteral6(["MayDay\u2122 supply package"]))));
   }
 };
 
