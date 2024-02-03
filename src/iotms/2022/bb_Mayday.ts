@@ -1,4 +1,4 @@
-import { Location, daycount, use } from "kolmafia";
+import { Location, myDaycount, use } from "kolmafia";
 import { ASC_IOTM } from "../../lib";
 import { $item, $location, have } from "libram";
 
@@ -14,6 +14,6 @@ export default {
     },
     execute: () => {
         have($item`spare battery`) && use($item`spare battery`); // might as well get MP regen use
-        have($item`MayDay™ supply package`) && daycount() > 1 && use($item`MayDay™ supply package`); // just crack it when desert is done
+        have($item`MayDay™ supply package`) && myDaycount() > 1 && use($item`MayDay™ supply package`); // just crack it when desert is done
     }
 } as ASC_IOTM;
