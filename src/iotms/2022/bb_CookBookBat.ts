@@ -1,6 +1,6 @@
-import { Location, use } from "kolmafia";
+import { Location } from "kolmafia";
 import { ASC_IOTM } from "../../lib";
-import { $familiar, $item, $location, have } from "libram";
+import { $familiar, $location } from "libram";
 
 export default {
     familiar: (loc: Location) => {
@@ -9,8 +9,5 @@ export default {
             return $familiar`Cookbookbat`;
         }
         return undefined;
-    },
-    execute: () => {
-        have($item`autumn years wisdom`) && use($item`autumn years wisdom`);
     }
 } as ASC_IOTM;

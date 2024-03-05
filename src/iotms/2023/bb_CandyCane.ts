@@ -1,15 +1,15 @@
 import { $effect, $item, $location, get, have } from "libram";
 import { ASC_IOTM } from "../../lib";
-import { Location, haveEquipped } from "kolmafia";
+import { Location, haveEquipped, myPath, toPath } from "kolmafia";
 
 export default {
     warnings: () => {
         const warnings = [];
-        !have($effect`Peppermint Rush`) && !haveEquipped($item`candy cane sword cane`) && warnings.push('Equip candy cane and use combat skill');
+        (myPath() !== toPath('WereProfessor') || get('cyrptAlcoveEvilness') > 13) && !have($effect`Peppermint Rush`) && !haveEquipped($item`candy cane sword cane`) && warnings.push('Equip candy cane and use combat skill');
         return warnings;
     },
     equip: (loc: Location) => {
-        if (loc === $location`The Daily Dungeon` && !get('candyCaneSwordDailyDungeon') ||
+        if (loc === $location`The Daily Dungeon` && !get('candyCaneSwordDailyDungeon') && get('_lastDailyDungeonRoom') === 14 ||
             loc === $location`The Black Forest` && $location`The Black Forest`.turnsSpent % 5 === 4 && !get('candyCaneSwordBlackForest') ||
             loc === $location`The Shore, Inc. Travel Agency` && !get('candyCaneSwordShore') ||
             loc === $location`Hippy Camp` && !(get('candyCaneSwordWarHippyBait') || get('candyCaneSwordWarHippyLine')) ||

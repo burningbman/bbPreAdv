@@ -7,7 +7,8 @@ const context = await esbuild.context({
     target: "rhino1.7.14",
     external: ["kolmafia"],
     entryPoints: {
-        "scripts/bbPreAdv/Std2024": "src/Std2024.ts"
+        "scripts/bbPreAdv/Std2024": "src/preAdvStd2024.ts",
+        "scripts/bbPreAdv/WereProf": "src/preAdvWereProf.ts"
     },
     entryNames: "[dir]/[name]",
     outdir: "dist",

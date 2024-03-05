@@ -1,4 +1,4 @@
-import { Location, Monster, Phylum } from "kolmafia";
+import { Location, Monster, Phylum, haveEffect } from "kolmafia";
 import { get, have, $effect, $familiar, $location, $monster, $phylum } from "libram";
 import { ASC_IOTM, ZONE_DATA } from "../../lib";
 
@@ -18,6 +18,9 @@ const phyla = new Map<Location, Phylum>([
 ]);
 
 export default {
+    warnings: () => {
+        return haveEffect($effect`Everything Looks Red, White and Blue`) === 1 ? ['ELRWB expires next turn'] : undefined;
+    },
     errors: (loc: Location) => {
         const errors = [];
         const target = rwbTargetByLocation.get(loc);
@@ -30,13 +33,6 @@ export default {
         }
 
         return errors;
-    },
-    warnings: (loc: Location) => {
-        const target = rwbTargetByLocation.get(loc);
-        if (target && get('rwbMonster') !== target && have($effect`Everything Looks Red, White and Blue`)) {
-            return [`Supposed to RWB ${target}, but still have ELRWB. Go somewhere else?`];
-        }
-        return undefined;
     },
     familiar: (loc: Location) => {
         const target = rwbTargetByLocation.get(loc);

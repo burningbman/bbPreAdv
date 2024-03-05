@@ -5,7 +5,7 @@ import { $item, $location, get } from "libram";
 export default {
     warnings: () => {
         const warnings = [];
-        if (get('spookyVHSTapeMonsterTurn') === totalTurnsPlayed() + 1) {
+        if (totalTurnsPlayed() - get('spookyVHSTapeMonsterTurn') === 8 && get('spookyVHSTapeMonster')) {
             warnings.push('Spooky VHS monster next turn');
         }
         return warnings;

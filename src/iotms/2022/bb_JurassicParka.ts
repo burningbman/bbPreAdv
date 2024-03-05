@@ -9,8 +9,9 @@ export default {
             if (!haveEquipped($item`Jurassic Parka`)) {
                 warnings.push('Parka not equipped if going for YR');
             }
-            //TODO validate mode on jurassic parka
-            // if ()
+            else {
+                warnings.push('Is your parka on acid mode?');
+            }
         }
         return warnings;
     }

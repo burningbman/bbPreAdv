@@ -1,6 +1,6 @@
-import { $skill, get } from "libram";
+import { $familiar, $skill, get } from "libram";
 import { ASC_IOTM } from "../../lib";
-import { useSkill } from "kolmafia";
+import { useFamiliar, useSkill } from "kolmafia";
 
 export default {
     execute: () => {
